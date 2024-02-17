@@ -33,7 +33,7 @@ const productList = [
       "price": 25.79,
       "description": "Description for product 4",
       "category": "Category 2",
-      "image": "image4.jpg",
+      "image": "https://unsplash.com/photos/TB0Ao4CQRqc",
       "inventory": 200
     },
     {
@@ -42,7 +42,7 @@ const productList = [
       "price": 8.99,
       "description": "Description for product 5",
       "category": "Category 3",
-      "image": "image5.jpg",
+      "image": "https://unsplash.com/photos/MJPr6nOdppw",
       "inventory": 80
     },
     {
@@ -51,7 +51,7 @@ const productList = [
       "price": 19.99,
       "description": "Description for product 6",
       "category": "Category 3",
-      "image": "image6.jpg",
+      "image": "https://unsplash.com/photos/PFzy4N0_R3M",
       "inventory": 110
     },
     {
@@ -60,7 +60,7 @@ const productList = [
       "price": 30.99,
       "description": "Description for product 7",
       "category": "Category 4",
-      "image": "image7.jpg",
+      "image": "https://unsplash.com/photos/i5BY6W2ttts",
       "inventory": 170
     },
     {
