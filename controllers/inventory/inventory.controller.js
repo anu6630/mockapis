@@ -6,7 +6,7 @@ const productList = [
       "price": 10.99,
       "description": "Description for product 1",
       "category": "Category 1",
-      "image": "image1.jpg",
+      "image": "https://i.postimg.cc/05XXtHmb/kate-skumen-PJRabku-H3-Q-unsplash.jpg",
       "inventory": 100
     },
     {
@@ -15,7 +15,7 @@ const productList = [
       "price": 20.49,
       "description": "Description for product 2",
       "category": "Category 1",
-      "image": "image2.jpg",
+      "image": "https://i.postimg.cc/gjrWCXNR/faith-yarn-Wr0-Tp-Kqf26s-unsplash.jpg",
       "inventory": 150
     },
     {
@@ -24,7 +24,7 @@ const productList = [
       "price": 15.99,
       "description": "Description for product 3",
       "category": "Category 2",
-      "image": "image3.jpg",
+      "image": "https://i.postimg.cc/k5xKSDNx/beauty-woman-model-wear-stylish-260nw-546542380.webp",
       "inventory": 120
     },
     {
