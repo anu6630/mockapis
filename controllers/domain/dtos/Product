@@ -1,0 +1,28 @@
+const mongoose = require('mongoose');
+var uuid = require('node-uuid');
+const Schema = mongoose.Schema;
+
+const init = function init(mongoose){
+    const productSchema = new Schema({
+        id: {
+            type: String,
+            unique: true,
+            default : uuid.v1
+        },
+        name: String,
+        price: Number,
+        description: String,
+        category: String,
+        image: String,
+        inventory: Number,
+        brand : String
+    });
+    
+
+    // Create a model based on the schema
+    const Product = mongoose.model('Product', productSchema);
+
+    return Product
+}
+
+module.exports = init

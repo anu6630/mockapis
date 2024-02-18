@@ -1,10 +1,21 @@
 const express = require("express");
 const router = express.Router();
 
+
+//Product routes
 const inventoryController = require("../controllers/inventory/inventory.controller")
 
+router.get("/inventory", inventoryController.inventoryController);
+router.post("/inventory", inventoryController.saveProductController);
 
-router.get("/inventory", inventoryController.getAllInventory);
+
+
+//Order routes
+
+const orderController = require("../controllers/order/orders.controller")
+
+router.get("/order", orderController.getOrderController);
+router.post("/order", orderController.captureOrderController);
 
 
 

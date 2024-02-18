@@ -1,17 +1,23 @@
 
+const mongoose = require('mongoose');
+const ModelRegistry = require("../../infra/boot/ModelRegistry")
+
+const Product = ModelRegistry.Product
+
 const productList = [
     {
       "id": "1",
-      "title": "Product 1",
+      "name": "Product 1",
       "price": 10.99,
       "description": "Description for product 1",
       "category": "Category 1",
       "image": "https://i.postimg.cc/05XXtHmb/kate-skumen-PJRabku-H3-Q-unsplash.jpg",
-      "inventory": 100
+      "inventory": 100,
+      "brand" : "Nike",
     },
     {
       "id": "2",
-      "title": "Product 2",
+      "name": "Product 2",
       "price": 20.49,
       "description": "Description for product 2",
       "category": "Category 1",
@@ -20,7 +26,7 @@ const productList = [
     },
     {
       "id": "3",
-      "title": "Product 3",
+      "name": "Product 3",
       "price": 15.99,
       "description": "Description for product 3",
       "category": "Category 2",
@@ -29,7 +35,7 @@ const productList = [
     },
     {
       "id": "4",
-      "title": "Product 4",
+      "name": "Product 4",
       "price": 25.79,
       "description": "Description for product 4",
       "category": "Category 2",
@@ -38,7 +44,7 @@ const productList = [
     },
     {
       "id": "5",
-      "title": "Product 5",
+      "name": "Product 5",
       "price": 8.99,
       "description": "Description for product 5",
       "category": "Category 3",
@@ -47,7 +53,7 @@ const productList = [
     },
     {
       "id": "6",
-      "title": "Product 6",
+      "name": "Product 6",
       "price": 19.99,
       "description": "Description for product 6",
       "category": "Category 3",
@@ -56,7 +62,7 @@ const productList = [
     },
     {
       "id": "7",
-      "title": "Product 7",
+      "name": "Product 7",
       "price": 30.99,
       "description": "Description for product 7",
       "category": "Category 4",
@@ -65,7 +71,7 @@ const productList = [
     },
     {
       "id": "8",
-      "title": "Product 8",
+      "name": "Product 8",
       "price": 12.49,
       "description": "Description for product 8",
       "category": "Category 4",
@@ -74,7 +80,7 @@ const productList = [
     },
     {
       "id": "9",
-      "title": "Product 9",
+      "name": "Product 9",
       "price": 5.99,
       "description": "Description for product 9",
       "category": "Category 5",
@@ -83,7 +89,7 @@ const productList = [
     },
     {
       "id": "10",
-      "title": "Product 10",
+      "name": "Product 10",
       "price": 35.99,
       "description": "Description for product 10",
       "category": "Category 5",
@@ -92,7 +98,7 @@ const productList = [
     },
     {
       "id": "11",
-      "title": "Product 11",
+      "name": "Product 11",
       "price": 16.99,
       "description": "Description for product 11",
       "category": "Category 6",
@@ -101,7 +107,7 @@ const productList = [
     },
     {
       "id": "12",
-      "title": "Product 12",
+      "name": "Product 12",
       "price": 22.49,
       "description": "Description for product 12",
       "category": "Category 6",
@@ -110,7 +116,7 @@ const productList = [
     },
     {
       "id": "13",
-      "title": "Product 13",
+      "name": "Product 13",
       "price": 7.99,
       "description": "Description for product 13",
       "category": "Category 7",
@@ -119,7 +125,7 @@ const productList = [
     },
     {
       "id": "14",
-      "title": "Product 14",
+      "name": "Product 14",
       "price": 28.99,
       "description": "Description for product 14",
       "category": "Category 7",
@@ -128,7 +134,7 @@ const productList = [
     },
     {
       "id": "15",
-      "title": "Product 15",
+      "name": "Product 15",
       "price": 9.99,
       "description": "Description for product 15",
       "category": "Category 8",
@@ -137,7 +143,7 @@ const productList = [
     },
     {
       "id": "16",
-      "title": "Product 16",
+      "name": "Product 16",
       "price": 31.49,
       "description": "Description for product 16",
       "category": "Category 8",
@@ -146,7 +152,7 @@ const productList = [
     },
     {
       "id": "17",
-      "title": "Product 17",
+      "name": "Product 17",
       "price": 11.99,
       "description": "Description for product 17",
       "category": "Category 9",
@@ -155,7 +161,7 @@ const productList = [
     },
     {
       "id": "18",
-      "title": "Product 18",
+      "name": "Product 18",
       "price": 24.79,
       "description": "Description for product 18",
       "category": "Category 9",
@@ -164,7 +170,7 @@ const productList = [
     },
     {
       "id": "19",
-      "title": "Product 19",
+      "name": "Product 19",
       "price": 6.99,
       "description": "Description for product 19",
       "category": "Category 10",
@@ -173,7 +179,7 @@ const productList = [
     },
     {
       "id": "20",
-      "title": "Product 20",
+      "name": "Product 20",
       "price": 34.99,
       "description": "Description for product 20",
       "category": "Category 10",
@@ -181,15 +187,34 @@ const productList = [
       "inventory": 110
     }
   ]
-
  inventoryController = async (req, res) => {
     try {
-    
-      res.status(201).send(productList);
+      console.log("=========", Product)
+      const productList = await Product.find({})
+      res.status(200).send(productList);
     } catch (error) {
-      res.status(500).send({ message: error.message });
+      console.error(error)
+      res.status(500).send({ message: "Could not load products, Retry later" });
     }
   };
 
 
-  exports.getAllInventory = inventoryController 
+const saveProductController = async (req, res) => {
+
+    try {
+        // Create a new product using the request body
+        const product = new Product(req.body);
+        // Save the product to the database
+        await product.save();
+        // Send a success response
+        res.status(201).json({ message: 'Product created successfully', product });
+    } catch (error) {
+        // If an error occurs, send an error response
+        res.status(500).json({ message: 'Failed to create product', error: error.message });
+    }
+};
+
+module.exports = {
+  saveProductController,
+  inventoryController
+};
