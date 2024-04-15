@@ -15,7 +15,8 @@ const init = function init(mongoose){
         category: String,
         image: String,
         inventory: Number,
-        brand : String
+        brand : String,
+        upc : String
     });
     
 
