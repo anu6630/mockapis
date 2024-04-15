@@ -31,7 +31,8 @@ const productList = [
       "description": "Description for product 3",
       "category": "Category 2",
       "image": "https://i.postimg.cc/k5xKSDNx/beauty-woman-model-wear-stylish-260nw-546542380.webp",
-      "inventory": 120
+      "inventory": 120,
+      "upc": "012345678901"
     },
     {
       "id": "4",
@@ -40,7 +41,8 @@ const productList = [
       "description": "Description for product 4",
       "category": "Category 2",
       "image": "https://unsplash.com/photos/TB0Ao4CQRqc",
-      "inventory": 200
+      "inventory": 200,
+      "upc": "012345678902"
     },
     {
       "id": "5",
@@ -49,7 +51,8 @@ const productList = [
       "description": "Description for product 5",
       "category": "Category 3",
       "image": "https://unsplash.com/photos/MJPr6nOdppw",
-      "inventory": 80
+      "inventory": 80,
+      "upc": "012345678903"
     },
     {
       "id": "6",
@@ -58,7 +61,8 @@ const productList = [
       "description": "Description for product 6",
       "category": "Category 3",
       "image": "https://unsplash.com/photos/PFzy4N0_R3M",
-      "inventory": 110
+      "inventory": 110,
+      "upc": "012345678904"
     },
     {
       "id": "7",
@@ -67,7 +71,8 @@ const productList = [
       "description": "Description for product 7",
       "category": "Category 4",
       "image": "https://unsplash.com/photos/i5BY6W2ttts",
-      "inventory": 170
+      "inventory": 170,
+      "upc": "012345678905"
     },
     {
       "id": "8",
@@ -76,7 +81,8 @@ const productList = [
       "description": "Description for product 8",
       "category": "Category 4",
       "image": "image8.jpg",
-      "inventory": 90
+      "inventory": 90,
+      "upc": "012345678906"
     },
     {
       "id": "9",
@@ -85,7 +91,8 @@ const productList = [
       "description": "Description for product 9",
       "category": "Category 5",
       "image": "image9.jpg",
-      "inventory": 60
+      "inventory": 60,
+      "upc": "012345678907"
     },
     {
       "id": "10",
@@ -94,7 +101,8 @@ const productList = [
       "description": "Description for product 10",
       "category": "Category 5",
       "image": "image10.jpg",
-      "inventory": 220
+      "inventory": 220,
+      "upc": "012345678908"
     },
     {
       "id": "11",
@@ -103,7 +111,8 @@ const productList = [
       "description": "Description for product 11",
       "category": "Category 6",
       "image": "image11.jpg",
-      "inventory": 130
+      "inventory": 130,
+      "upc": "012345678909"
     },
     {
       "id": "12",
@@ -112,7 +121,8 @@ const productList = [
       "description": "Description for product 12",
       "category": "Category 6",
       "image": "image12.jpg",
-      "inventory": 180
+      "inventory": 180,
+      "upc": "012345678910"
     },
     {
       "id": "13",
@@ -121,7 +131,8 @@ const productList = [
       "description": "Description for product 13",
       "category": "Category 7",
       "image": "image13.jpg",
-      "inventory": 70
+      "inventory": 70,
+      "upc": "012345678911"
     },
     {
       "id": "14",
@@ -130,7 +141,8 @@ const productList = [
       "description": "Description for product 14",
       "category": "Category 7",
       "image": "image14.jpg",
-      "inventory": 190
+      "inventory": 190,
+      "upc": "012345678912"
     },
     {
       "id": "15",
@@ -139,7 +151,8 @@ const productList = [
       "description": "Description for product 15",
       "category": "Category 8",
       "image": "image15.jpg",
-      "inventory": 100
+      "inventory": 100,
+      "upc": "012345678913"
     },
     {
       "id": "16",
@@ -148,7 +161,8 @@ const productList = [
       "description": "Description for product 16",
       "category": "Category 8",
       "image": "image16.jpg",
-      "inventory": 150
+      "inventory": 150,
+      "upc": "012345678914"
     },
     {
       "id": "17",
@@ -157,7 +171,8 @@ const productList = [
       "description": "Description for product 17",
       "category": "Category 9",
       "image": "image17.jpg",
-      "inventory": 120
+      "inventory": 120,
+      "upc": "012345678915"
     },
     {
       "id": "18",
@@ -166,7 +181,8 @@ const productList = [
       "description": "Description for product 18",
       "category": "Category 9",
       "image": "image18.jpg",
-      "inventory": 200
+      "inventory": 200,
+      "upc": "0123456789016"
     },
     {
       "id": "19",
@@ -175,7 +191,8 @@ const productList = [
       "description": "Description for product 19",
       "category": "Category 10",
       "image": "image19.jpg",
-      "inventory": 80
+      "inventory": 80,
+      "upc": "012345678917"
     },
     {
       "id": "20",
@@ -184,7 +201,8 @@ const productList = [
       "description": "Description for product 20",
       "category": "Category 10",
       "image": "image20.jpg",
-      "inventory": 110
+      "inventory": 110,
+      "upc": "012345678918"
     }
   ]
  inventoryController = async (req, res) => {
