@@ -232,7 +232,54 @@ const saveProductController = async (req, res) => {
     }
 };
 
+const searchProductController = async (req, res) => {
+
+  const { query } = req;
+    term = '\\b' + query.query + '\\b'; // Match whole word boundaries
+
+  try {
+    const products = await Product.find({
+      $or: [
+          { upc: { $regex: term, $options: 'i' } }, // Case-insensitive search for UPC
+          { name: { $regex: term, $options: 'i' } } // Case-insensitive search for name
+      ]
+    });
+     res.status(200).json(products);
+  } catch (error) {
+      // If an error occurs, send an error response
+      res.status(500).json({ message: 'Failed to create product', error: error.message });
+  }
+};
+
+
+const getById = async (req, res) => {
+  const { query } = req;
+  const id = query.id;
+  try {
+    const products = await Product.find({"_id" : id});
+     res.status(200).json(products);
+  } catch (error) {
+      // If an error occurs, send an error response
+      res.status(500).json({ message: 'Failed to create product', error: error.message });
+  }
+};
+
+const getAllProducts = async (req, res) => {
+
+  try {
+    const products = await Product.find({});
+     res.status(200).json(products);
+  } catch (error) {
+      // If an error occurs, send an error response
+      res.status(500).json({ message: 'Failed to create product', error: error.message });
+  }
+};
+
+
+
 module.exports = {
   saveProductController,
-  inventoryController
+  inventoryController,
+  searchProductController,
+  getAllProducts, getById
 };
